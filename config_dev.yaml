@@ -1,0 +1,34 @@
+zap:
+  level: info
+  format: console
+  prefix: '[cnic/fairman-gin]'
+  director: log
+  showLine: false
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: true
+system:
+  name: fairman-gin
+  version: v0.0.1
+  port: "9999"
+  login: http://127.0.0.1:9999
+  pid-file: "fairman-gin.pid"
+  backend-path: "/cnic/fairman-gin"
+  #frontend-path: "/mnt/web/dist"
+  frontend-path: "/cnic/fairman-gin"
+rate-limit:
+  cap: 100
+  quantum: 100
+docker:
+  type: Local
+  binary-path: cmd
+  config-path: data
+  url:
+service:
+  url: http://127.0.0.1:9999
+jwt:
+  signing-key: asdfghqwert
+  expires-time: 604800
+  buffer-time: 86400
+  issuer: 'cnic'
+endpoint:
